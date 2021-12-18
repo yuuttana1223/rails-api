@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :book_marks, through: :favorite, source: :review
+
+  validates :name, length: { in: 2..20 }
 end
