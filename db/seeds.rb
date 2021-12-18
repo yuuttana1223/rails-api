@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+for i in 1..25
+  user = User.create({ name: "test_#{i}", email: "test#{i}@test.com", password: "password", password_confirmation: "password" })
+  for j in 1..3
+    review = Review.create({ user_id: user.id, lecture_name: "プロ演#{i}]#{j}", teature_name: "前納", lesson_type: "対面", adequacy: "満足", submission_quantity: "多い", difficulty: "難しい", content: "良かったよー" })
+    Comment.create({ user_id: user.id, review_id: review.id, body: "body_#{i}_#{j}" })
+  end
+end
+
+# Review.create!({ user_id: 1, lecture_name: "プロ演1", teature_name: "前納", lesson_type: "対面", adequacy: "満足", submission_quantity: "多い", difficulty: "難しい", content: "良かったよー" })
+# Review.create!({ user_id: 1, lecture_name: "プロ演2", teature_name: "前納", lesson_type: "対面", adequacy: "満足", submission_quantity: "多い", difficulty: "難しい", content: "良かったよー" })
