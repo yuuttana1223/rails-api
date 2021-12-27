@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_035447) do
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "lecture_name", comment: "講義の名前"
-    t.string "teature_name", comment: "講師の名前"
+    t.string "teacher_name", comment: "講師の名前"
     t.string "lesson_type", comment: "授業形式"
     t.string "adequacy", comment: "授業の内容充実度"
     t.string "submission_quantity", comment: "提出物の量"
