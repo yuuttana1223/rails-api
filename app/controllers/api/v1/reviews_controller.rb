@@ -38,6 +38,6 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:lecture_name, :teature_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :content)
+    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :content)
   end
 end
