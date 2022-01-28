@@ -13,4 +13,6 @@ class Review < ApplicationRecord
   validates :difficulty, inclusion: { in: %w(難しい やや難しい 普通 やや易しい 易しい) }
   validates :is_ending_test, inclusion: { in: [true, false] }
   validates :content, length: { in: 1..500 }
+
+  scope :add_username, -> { joins(:user).select("reviews.*, users.name AS username") }
 end
