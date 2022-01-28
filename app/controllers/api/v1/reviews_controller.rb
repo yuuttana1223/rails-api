@@ -1,11 +1,11 @@
 class Api::V1::ReviewsController < ApplicationController
   def index
-    reviews = Review.all
+    reviews = Review.add_username
     render json: reviews, status: :ok
   end
 
   def show
-    review = Review.find(params[:id])
+    review = Review.add_username.find(params[:id])
     render json: review, status: :ok
   end
 
