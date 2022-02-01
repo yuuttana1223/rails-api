@@ -1,6 +1,9 @@
 class Api::V1::ReviewsController < ApplicationController
+  before_action :authenticate_api_v1_user!, only: %i[create update destroy]
+  before_action :ensure_correct_user, only: %i[update destroy]
+
   def index
-    reviews = Review.add_username
+    reviews = Review.add_username.order(id: "DESC")
     render json: reviews, status: :ok
   end
 
@@ -10,7 +13,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(review_params)
+    review = current_api_v1_user.reviews.build(review_params)
     if review.save
       render json: review, status: :created
     else
@@ -19,16 +22,15 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def update
-    review = Review.find(params[:id])
-    if review.update(review_params)
-      render json: review, status: :created
+    if @review.update(review_params)
+      render json: @review, status: :created
     else
-      render json: review.errors, status: :unprocessable_entity
+      render json: @review.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    if Review.find(params[:id]).destroy
+    if @review.destroy
       head :no_content
     else
       render json: { error: "Failed to destroy" }, status: :unprocessable_entity
@@ -38,6 +40,13 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:user_id, :lecture_name, :teacher_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :is_ending_test, :content)
+    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :is_ending_test, :content)
+  end
+
+  def ensure_correct_user
+    @review = Review.find(params[:id])
+    unless current_api_v1_user.id == @review.user_id
+      render json: { error: "You are not authorized to access this review" }, status: :unauthorized
+    end
   end
 end
