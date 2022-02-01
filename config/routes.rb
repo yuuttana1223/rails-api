@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       namespace :auth do
         resources :sessions, only: %i[index]
       end
-      resources :reviews, only: %i[index show create update destroy]
+      resources :reviews, only: %i[index show create update destroy] do
+        resource :likes, only: %i[show create destroy]
+      end
+      resources :likes, only: %i[index]
     end
   end
 end
