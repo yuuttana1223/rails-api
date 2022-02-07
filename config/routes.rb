@@ -9,8 +9,10 @@ Rails.application.routes.draw do
       end
       resources :reviews, only: %i[index show create update destroy] do
         resource :likes, only: %i[show create destroy]
+        resources :comments, only: %i[index create update destroy], controller: "review_comments"
       end
       resources :likes, only: %i[index]
+      resources :comments, only: %i[index]
     end
   end
 end
