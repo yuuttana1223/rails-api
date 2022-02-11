@@ -2,12 +2,7 @@ class Api::V1::LikesController < ApplicationController
   before_action :authenticate_api_v1_user!, only: %i[create destroy]
 
   def index
-    likes = Like.select("id", "user_id", "review_id").all
-    render json: likes, status: :ok
-  end
-
-  def show
-    likes = Like.select("id", "user_id", "review_id").where(review_id: params[:review_id])
+    likes = Like.select("user_id", "review_id").as_json(except: %i[id])
     render json: likes, status: :ok
   end
 
