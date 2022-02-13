@@ -3,7 +3,15 @@ class Api::V1::ReviewsController < ApplicationController
   before_action :ensure_correct_user, only: %i[update destroy]
 
   def index
-    reviews = Review.add_username.order(id: "DESC")
+    reviews = Review.add_username
+    case params[:sort_by]
+    when "created_at"
+      reviews = reviews.order(created_at: params[:order]) if params[:order]
+    when "lesson"
+      reviews = reviews.where(lesson_type: params[:type]) if params[:type]
+    else
+      reviews = reviews.order(created_at: "desc")
+    end
     render json: reviews, status: :ok
   end
 
