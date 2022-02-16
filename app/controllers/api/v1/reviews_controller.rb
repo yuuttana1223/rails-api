@@ -48,7 +48,7 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :is_ending_test, :content)
+    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :level_of_satisfaction, :workload, :difficulty, :is_ending_test, :content)
   end
 
   def ensure_correct_user
