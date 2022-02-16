@@ -9,6 +9,18 @@ class Api::V1::ReviewsController < ApplicationController
       reviews = reviews.order(created_at: params[:order]) if params[:order]
     when "lesson"
       reviews = reviews.where(lesson_type: params[:type]) if params[:type]
+    when "level_of_satisfaction"
+      reviews = reviews.order(level_of_satisfaction: params[:order]) if params[:order]
+    when "workload"
+      reviews = reviews.order(workload: params[:order]) if params[:order]
+    when "difficulty"
+      reviews = reviews.order(difficulty: params[:order]) if params[:order]
+    when "test"
+      reviews = reviews.where(is_ending_test: params[:is_ending_test]) if params[:is_ending_test]
+    when "likes_count"
+      reviews = reviews.find(Like.group(:review_id).order("count(review_id) desc").pluck(:review_id)) if params[:order]
+    when "comments_count"
+      reviews = reviews.find(Comment.group(:review_id).order("count(review_id) desc").pluck(:review_id)) if params[:order]
     else
       reviews = reviews.order(created_at: "desc")
     end
