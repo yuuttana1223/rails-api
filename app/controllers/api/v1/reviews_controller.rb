@@ -3,7 +3,27 @@ class Api::V1::ReviewsController < ApplicationController
   before_action :ensure_correct_user, only: %i[update destroy]
 
   def index
-    reviews = Review.add_username.order(id: "DESC")
+    reviews = Review.add_username
+    case params[:sort_by]
+    when "created_at"
+      reviews = reviews.order(created_at: params[:order]) if params[:order]
+    when "lesson"
+      reviews = reviews.where(lesson_type: params[:type]) if params[:type]
+    when "level_of_satisfaction"
+      reviews = reviews.order(level_of_satisfaction: params[:order]) if params[:order]
+    when "workload"
+      reviews = reviews.order(workload: params[:order]) if params[:order]
+    when "difficulty"
+      reviews = reviews.order(difficulty: params[:order]) if params[:order]
+    when "test"
+      reviews = reviews.where(is_ending_test: params[:is_ending_test]) if params[:is_ending_test]
+    when "likes_count"
+      reviews = reviews.find(Like.group(:review_id).order("count(review_id) desc").pluck(:review_id)) if params[:order]
+    when "comments_count"
+      reviews = reviews.find(Comment.group(:review_id).order("count(review_id) desc").pluck(:review_id)) if params[:order]
+    else
+      reviews = reviews.order(created_at: "desc")
+    end
     render json: reviews, status: :ok
   end
 
@@ -40,7 +60,7 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :adequacy, :submission_quantity, :difficulty, :is_ending_test, :content)
+    params.require(:review).permit(:lecture_name, :teacher_name, :lesson_type, :level_of_satisfaction, :workload, :difficulty, :is_ending_test, :content)
   end
 
   def ensure_correct_user

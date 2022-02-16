@@ -5,12 +5,17 @@ class Review < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  enum lesson_type: { "対面": 0, "リアルタイムオンライン": 1, "オンデマンド": 2, "ハイブリッド": 3 }, _prefix: true
+  enum level_of_satisfaction: { "大変不満": 0, "不満": 1, "普通": 2, "満足": 3, "大変満足": 4 }, _prefix: true
+  enum workload: { "大変少ない": 0, "少ない": 1, "普通": 2, "多い": 3, "大変多い": 4 }, _prefix: true
+  enum difficulty: { "大変易しい": 0, "易しい": 1, "普通": 2, "難しい": 3, "大変難しい": 4 }, _prefix: true
+
   validates :lecture_name, length: { in: 2..25 }
   validates :teacher_name, length: { in: 2..25 }
-  validates :lesson_type, inclusion: { in: %w(リアルタイムオンライン 対面 オンデマンド ハイブリッド) }
-  validates :adequacy, inclusion: { in: %w(満足 やや満足 普通 やや不満 不満) }
-  validates :submission_quantity, inclusion: { in: %w(多い やや多い 普通 やや少ない 少ない) }
-  validates :difficulty, inclusion: { in: %w(難しい やや難しい 普通 やや易しい 易しい) }
+  validates :lesson_type, presence: true
+  validates :level_of_satisfaction, presence: true
+  validates :workload, presence: true
+  validates :difficulty, presence: true
   validates :is_ending_test, inclusion: { in: [true, false] }
   validates :content, length: { in: 1..500 }
 
