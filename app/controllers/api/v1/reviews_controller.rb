@@ -24,6 +24,13 @@ class Api::V1::ReviewsController < ApplicationController
     else
       reviews = reviews.order(created_at: "desc")
     end
+    if params[:search_query]
+      if reviews.class == Array
+        reviews = reviews.select { |review| review.lecture_name.include?(params[:search_query]) || review.teacher_name.include?(params[:search_query]) }
+      else
+        reviews = reviews.having("lecture_name LIKE ? OR teacher_name LIKE ?", "%#{params[:search_query]}%", "%#{params[:search_query]}%")
+      end
+    end
     render json: reviews, status: :ok
   end
 
