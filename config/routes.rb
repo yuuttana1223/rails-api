@@ -12,10 +12,13 @@ Rails.application.routes.draw do
         resource :favorites, only: %i[create destroy]
         resources :comments, only: %i[index create update destroy], controller: "review_comments"
       end
+      resources :users, only: %i[update] do
+        get "favorites", to: "users#favorites"
+      end
+
       resources :likes, only: %i[index]
       resources :favorites, only: %i[index]
       resources :comments, only: %i[index]
-      resources :users, only: %i[update]
     end
   end
 end

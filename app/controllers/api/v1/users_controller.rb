@@ -2,6 +2,12 @@ class Api::V1::UsersController < ApplicationController
   before_action :authenticate_api_v1_user!, only: %i[update]
   before_action :ensure_correct_user, only: %i[update]
 
+  def favorites
+    user = User.find(params[:user_id])
+    favoriteReviews = user.favorite_reviews.joins(:favorites, :user).select("reviews.*, users.name AS username, favorites.created_at AS favorited_at").order(favorited_at: "desc")
+    render json: favoriteReviews, status: :ok
+  end
+
   def update
     if @user.update(user_params)
       render json: @user, status: :ok

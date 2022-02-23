@@ -2,7 +2,7 @@ class Api::V1::FavoritesController < ApplicationController
   before_action :authenticate_api_v1_user!, only: %i[create destroy]
 
   def index
-    favorites = Favorite.select("user_id", "review_id").as_json(except: %i[id])
+    favorites = Favorite.select("user_id", "review_id").order(created_at: "desc").as_json(except: %i[id])
     render json: favorites, status: :ok
   end
 
