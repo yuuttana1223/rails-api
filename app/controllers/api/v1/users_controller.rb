@@ -4,7 +4,8 @@ class Api::V1::UsersController < ApplicationController
 
   def favorites
     user = User.find(params[:user_id])
-    favoriteReviews = user.favorite_reviews.joins(:favorites, :user).select("reviews.*, users.name AS username, favorites.created_at AS favorited_at").order(favorited_at: "desc")
+    favoriteReviews = user.favorite_reviews.joins(:favorites, :user).select("reviews.*, users.name AS username, favorites.created_at AS favorited_at").distinct.order(favorited_at: "desc")
+
     render json: favoriteReviews, status: :ok
   end
 
