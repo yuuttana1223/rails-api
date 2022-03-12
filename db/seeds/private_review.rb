@@ -80,10 +80,10 @@ Review.create!(
       user_id: user.id, lecture_name: "哲学", teacher_name: "國嶋貴美子", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "最終課題をいきなり渡されるが、それ以外特に課題はないのでとても楽だった。最終課題レポートはみんなの前で読まれてフィードバックをもらうが、反応が悪くなければA評価はもらえる。出席を取る時間がかなり長めに設定されていた。",
     },
     {
-      user_id: user.id, lecture_name: "	特別講義2", teacher_name: "複数人", lesson_type: "オンデマンド", level_of_satisfaction: "普通", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "基本特別講義1と同じだが、途中でコピペをしている人が出てきたので、警告を出されていた。著作権の講義が印象に残っている。",
+      user_id: user.id, lecture_name: "特別講義2", teacher_name: "複数人", lesson_type: "オンデマンド", level_of_satisfaction: "普通", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "基本特別講義1と同じだが、途中でコピペをしている人が出てきたので、警告を出されていた。著作権の講義が印象に残っている。",
     },
     {
-      user_id: user.id, lecture_name: "	Web技術概論", teacher_name: "田渕篤", lesson_type: "オンデマンド", level_of_satisfaction: "普通", workload: "少ない", difficulty: "易しい", is_ending_test: false, content: "Webの知識が体系的に学べる。Web系に就職したいと思っている人は最低限知っておかないといけないと思った。課題もすぐに終わるものばかりであった。",
+      user_id: user.id, lecture_name: "Web技術概論", teacher_name: "田渕篤", lesson_type: "オンデマンド", level_of_satisfaction: "普通", workload: "少ない", difficulty: "易しい", is_ending_test: false, content: "Webの知識が体系的に学べる。Web系に就職したいと思っている人は最低限知っておかないといけないと思った。課題もすぐに終わるものばかりであった。",
     },
     # 2年春学期
     {
@@ -93,7 +93,10 @@ Review.create!(
       user_id: user.id, lecture_name: "Javaアプリケーション開発", teacher_name: "田渕篤", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "普通", difficulty: "大変難しい", is_ending_test: false, content: "先生の人柄はとても良く質問にも熱心に答えてくれる。1年生の授業でJavaFXを使っている前提で授業が進んだので、内容が難しくなったのもありあまり授業の内容が理解できなかった。。コードで書いたものは残さないスタイルなので、少しでも遅れたり、エラーが出ておいていかれると後は何もできなくなっている生徒がいた。質問を授業を止めてでもできる精神がない人は、友達に聞くしかないのでそれもできない人はしんどいと思う。",
     },
     {
-      user_id: user.id, lecture_name: "iOSアプリ開発1", teacher_name: "前納一希	", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "多い", difficulty: "大変難しい", is_ending_test: false, content: "Macの人にはおすすめだが、Windowsの場合はWindowsから学校のパソコンに接続しないといけないので自習や課題に取り組むのに困難だと思った。iOSの予習をあらかじめしておくと、とても勉強になる。エラーの見方などはWebと違ってわかりにくいので、他の授業と違って難しいと思う。質問には熱心に答えてくれるのと動画や資料を残してもらえるのはありがたかった。授業を毎回止める人がいたときでも、止められないように対策していたのはとても良かった。",
+      user_id: user.id, lecture_name: "iOSアプリ開発1", teacher_name: "前納一希", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "多い", difficulty: "大変難しい", is_ending_test: false, content: "Macの人にはおすすめだが、Windowsの場合はWindowsから学校のパソコンに接続しないといけないので自習や課題に取り組むのに困難だと思った。iOSの予習をあらかじめしておくと、とても勉強になる。エラーの見方などはWebと違ってわかりにくいので、他の授業と違って難しいと思う。質問には熱心に答えてくれるのと動画や資料を残してもらえるのはありがたかった。授業を毎回止める人がいたときでも、止められないように対策していたのはとても良かった。",
+    },
+    {
+      user_id: user.id, lecture_name: "オブジェクト指向設計実習", teacher_name: "手塚正義", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "大変不満", workload: "大変多い", difficulty: "大変難しい", is_ending_test: true, content: "授業の説明に対して課題が難しすぎて、どういうふうに記述してばいいか分からないときが多々あった。説明は分かりにくく、授業内の課題が多すぎて終わらなかったことが多々合った。早めに課題を出してしまうと、みんなの前で課題を晒されて発表させられるので、授業が終わる直前に出すことをおすすめする。期末テストは、去年の過去問などが8割使い回されるので先輩から過去問を入手しているとだいぶ楽になる。",
     },
     {
       user_id: user.id, lecture_name: "ネットワークプログラミング", teacher_name: "前納一希	", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "大変満足", workload: "多い", difficulty: "大変難しい", is_ending_test: false, content: "KCGで唯一フレームワーク(Express)を使用する授業で、ある程度基礎が身についている人であればとても成長できる授業だと思う。逆にHTML・CSS・JSの基礎がわからない人にはしんどいと思うので取らないことをおすすめする。主な内容としてはリアルタイムチャットをsocket.ioとExpressを使用し、作成する。最終課題はSlackのクローンを作ることで必須項目と任意項目があり、とてもやりがいがあった。課題の作成時間は授業内にかなり取ってくれるが、基礎ができていないとわからないところがわからないという状態になるので注意。",
