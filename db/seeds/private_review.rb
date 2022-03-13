@@ -1,13 +1,13 @@
-# user = User.create!({ name: "yuu", email: "yuu@yuu.com", password: "password" })
+user = User.find_by(email: "yuu@yuu.com")
 
 Review.create!(
   [
     # 1年春学期
     {
-      user_id: user.id, lecture_name: "Web開発入門", teacher_name: "谷口弘師", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "プロゲートやドットインストールをしたことがある人には簡単すぎて物足りないが、初心者にはちょうどよいかもしれない。模写するだけの課題であったり、教科書を写したりするのが多いので、単位自体は誰でも取れる。最後に課題の点数だけはフィードバックとしてもらえたが、どこが間違っているかやアドバイスなどは書かれていない。"
+      user_id: user.id, lecture_name: "Web開発入門", teacher_name: "谷口弘師", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "プロゲートやドットインストールをしたことがある人には簡単すぎて物足りないが、初心者にはちょうどよいかもしれない。模写するだけの課題であったり、教科書を写したりするのが多いので、単位自体は誰でも取れる。最後に課題の点数だけはフィードバックとしてもらえたが、どこが間違っているかやアドバイスなどは書かれていない。",
     },
     {
-      user_id: user.id, lecture_name: "計算機システム概論1", teacher_name: "鈴木佳代子", lesson_type: "オンデマンド", level_of_satisfaction: "大変不満", workload: "普通", difficulty: "普通", is_ending_test: true, content: "パワーポイントを渡され、基本情報の問題を解いて提出するだけの授業で動画や講義はなし。問題の回答は後から渡されるが解説はなくてフィードバックもなし。テストの対策は基本情報の問題ではないので、パワーポイントをまとめてテスト中に瞬時に見れるようにすると良いかも知れない。"
+      user_id: user.id, lecture_name: "計算機システム概論1", teacher_name: "鈴木佳代子", lesson_type: "オンデマンド", level_of_satisfaction: "大変不満", workload: "普通", difficulty: "普通", is_ending_test: true, content: "パワーポイントを渡され、基本情報の問題を解いて提出するだけの授業で動画や講義はなし。問題の回答は後から渡されるが解説はなくてフィードバックもなし。テストの対策は基本情報の問題ではないので、パワーポイントをまとめてテスト中に瞬時に見れるようにすると良いかも知れない。",
     },
     {
       user_id: user.id, lecture_name: "プロジェクト演習1", teacher_name: "鬼頭孝輔", lesson_type: "ハイブリッド", level_of_satisfaction: "不満", workload: "普通", difficulty: "易しい", is_ending_test: false, content: "算数の問題をグループで解いたり、資料集めやスライド作成などしたりした。コロナで数少ない交流の授業なので友達をこの授業で作らなければきつくなる。スライドをみんなで作り上げないといけないのだがチーム内でなにもしない人が2名もいて悲しかった。ハイブリッドにも関わらず対面で来るのが当然かの言い回しが気になったのと、質問をしても返信が返ってこないことが気になった。",
@@ -99,7 +99,7 @@ Review.create!(
       user_id: user.id, lecture_name: "オブジェクト指向設計実習", teacher_name: "手塚正義", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "大変不満", workload: "大変多い", difficulty: "大変難しい", is_ending_test: true, content: "授業の説明に対して課題が難しすぎて、どういうふうに記述してばいいか分からないときが多々あった。説明は分かりにくく、授業内の課題が多すぎて終わらなかったことが多々合った。早めに課題を出してしまうと、みんなの前で課題を晒されて発表させられるので、授業が終わる直前に出すことをおすすめする。期末テストは、去年の過去問などが8割使い回されるので先輩から過去問を入手しているとだいぶ楽になる。",
     },
     {
-      user_id: user.id, lecture_name: "ネットワークプログラミング", teacher_name: "前納一希	", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "大変満足", workload: "多い", difficulty: "大変難しい", is_ending_test: false, content: "KCGで唯一フレームワーク(Express)を使用する授業で、ある程度基礎が身についている人であればとても成長できる授業だと思う。逆にHTML・CSS・JSの基礎がわからない人にはしんどいと思うので取らないことをおすすめする。主な内容としてはリアルタイムチャットをsocket.ioとExpressを使用し、作成する。最終課題はSlackのクローンを作ることで必須項目と任意項目があり、とてもやりがいがあった。課題の作成時間は授業内にかなり取ってくれるが、基礎ができていないとわからないところがわからないという状態になるので注意。",
+      user_id: user.id, lecture_name: "ネットワークプログラミング", teacher_name: "前納一希", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "大変満足", workload: "多い", difficulty: "大変難しい", is_ending_test: false, content: "KCGで唯一フレームワーク(Express)を使用する授業で、ある程度基礎が身についている人であればとても成長できる授業だと思う。逆にHTML・CSS・JSの基礎がわからない人にはしんどいと思うので取らないことをおすすめする。主な内容としてはリアルタイムチャットをsocket.ioとExpressを使用し、作成する。最終課題はSlackのクローンを作ることで必須項目と任意項目があり、とてもやりがいがあった。課題の作成時間は授業内にかなり取ってくれるが、基礎ができていないとわからないところがわからないという状態になるので注意。",
     },
   ]
 )

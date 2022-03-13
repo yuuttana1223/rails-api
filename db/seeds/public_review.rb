@@ -30,10 +30,10 @@ Review.create!(
       user_id: user.id, lecture_name: "心理学", teacher_name: "澤田耕吉", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "少ない", difficulty: "大変易しい", is_ending_test: false, content: "人間の心理などを知れて、大衆的に面白い内容だった。課題も授業の感想を書くだけで授業中に終わるので自分の時間をゆっくりと取ることができる。最終課題でレポートが課されるが、それほど時間はかからない",
     },
     {
-      user_id: user.id, lecture_name: "多文化共生論", teacher_name: "朝田郁	", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "資料が見やすく、先生の話し方も好きだった。毎回小テストがあるが、資料を見ながらやれば9割解ける。授業中に課題が終わるので自分の時間を作りやすい。",
+      user_id: user.id, lecture_name: "多文化共生論", teacher_name: "朝田郁", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "資料が見やすく、先生の話し方も好きだった。毎回小テストがあるが、資料を見ながらやれば9割解ける。授業中に課題が終わるので自分の時間を作りやすい。",
     },
     {
-      user_id: user.id, lecture_name: "キャリア形成演習", teacher_name: "水野達郎	", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "普通", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "企業の話が聞けたりするが、Web系は株式会社フェンリルぐらいしかなかったので職種に偏りはあった。就活をする上で知っておいて損はない内容が多かった。授業中に課題が終わるので自分の時間を作りやすい。",
+      user_id: user.id, lecture_name: "キャリア形成演習", teacher_name: "水野達郎", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "普通", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: false, content: "企業の話が聞けたりするが、Web系は株式会社フェンリルぐらいしかなかったので職種に偏りはあった。就活をする上で知っておいて損はない内容が多かった。授業中に課題が終わるので自分の時間を作りやすい。",
     },
     {
       user_id: user.id, lecture_name: "FE対策演習", teacher_name: "大山口雅", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "満足", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: true, content: "とても話が分かりやすくて、理解できた。参考書はなくても良いが、買っておくと授業自体はやりやすくなると思う。とても人柄が良くて、遅刻しても許してくれる。問題をあらかじめ解いておかないと全く身につかないので、それが嫌な人は話を聞き流して、期末テストだけやるのもありだと思った。期末テストの内容はGoogle検索をすると出てくるので、理解してなくても満点が取れてしまう。",
