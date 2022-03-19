@@ -44,9 +44,6 @@ Review.create!(
       user_id: user.id, lecture_name: "ITパスポート対策演習2", teacher_name: "高田進", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: true, content: "ITパスポート対策演習1がそのままリアルタイムオンラインになっただけであった。出欠は授業の真ん中から後半あたりに取ることが多いが、サボり防止で時間を決めていない。最終試験も過去問の内容がそのままで、調べれば出てくる内容ばかりである。",
     },
     {
-      user_id: user.id, lecture_name: "JavaScript実習", teacher_name: "飯田慈子", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "普通", workload: "普通", difficulty: "普通", is_ending_test: false, content: "基本的に模写をしながら、分からなかったらSlackで先生に聞いていくスタイルで、Zoomは使わないので基本チャットベースのやり取り。JavaScript経験者の場合はさくさく進むが、初心者はしんどいと思う。課題は当たり前だが、人のを写した形跡があれば0点になる。毎回の課題の点数とフィードバックをもらえるのは嬉しいが、全員分の点数とフィードバックも見れてしまう。課題の解答も用意されているが、個人的には変数をローマ字で書くのをやめてほしかった。最終課題は自由作品かレポートを選べるが、自由作品が作れない人は評価は下る傾向にある。",
-    },
-    {
       user_id: user.id, lecture_name: "システム開発入門", teacher_name: "立道裕三", lesson_type: "リアルタイムオンライン", level_of_satisfaction: "不満", workload: "大変少ない", difficulty: "大変易しい", is_ending_test: true, content: "課題はほとんどなくて、小テストや期末テストでほとんど成績が決まる。基本情報の過去問が多いので検索したら出てくる。資料一枚に対して抽象的な話が多いので、聞いていると眠くなってしまう。",
     },
     {
